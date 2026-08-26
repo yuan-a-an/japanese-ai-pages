@@ -1,0 +1,18 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Japanese-AI 按学习日期进行单词测试"><title>単語テスト · Japanese-AI</title>
+  <script>document.documentElement.dataset.theme=localStorage.getItem('theme')||'light'</script>
+  <link rel="stylesheet" href="../assets/style.css"><link rel="stylesheet" href="../assets/layout-overrides.css"><link rel="stylesheet" href="../assets/pages.css">
+</head>
+<body data-page="quiz" data-pages-base="..">
+  <header class="topbar"><a class="brand" href="../"><span class="brand-mark">日</span><span>Japanese-AI</span></a><nav class="pages-nav" aria-label="主导航"><a href="../">単語帳</a><a class="active" href="./" aria-current="page">単語テスト</a></nav><button id="theme-toggle" class="icon-button" type="button" aria-label="切换深色模式">◐</button></header>
+  <main class="page-shell">
+    <header class="page-heading pages-heading"><div><div class="eyebrow">STUDY LOG · READ ONLY</div><h1>単語テスト</h1><div class="muted">按学习日期选择单词，看字或听发音作答，再自行核对。</div></div></header>
+    <div id="quiz-mode-tabs" class="tabs quiz-mode-tabs" aria-label="测验模式"><button class="tab" data-mode="read">看字测试</button><button class="tab" data-mode="listen">听音测试</button></div>
+    <div class="quiz-layout"><section class="quiz-main"><div id="date-tabs" class="tabs pages-date-tabs"></div><div id="quiz-list" class="grid"></div></section><aside id="quiz-calendar-card" class="calendar-card" aria-label="学习记录日历"><div class="calendar-head"><button id="quiz-calendar-prev" class="icon-button" aria-label="上个月">‹</button><strong id="quiz-calendar-title"></strong><button id="quiz-calendar-next" class="icon-button" aria-label="下个月">›</button></div><div class="calendar-weekdays" aria-hidden="true"><span>一</span><span>二</span><span>三</span><span>四</span><span>五</span><span>六</span><span>日</span></div><div id="quiz-calendar" class="calendar-grid"></div></aside></div>
+  </main>
+  <div id="toast" class="toast" role="status" aria-live="polite" hidden></div><script src="../assets/pages-common.js"></script><script src="../assets/quiz-personal.js"></script>
+</body>
+</html>

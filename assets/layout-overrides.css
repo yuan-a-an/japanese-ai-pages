@@ -1,0 +1,46 @@
+.jlpt-summary { width: min(820px, calc(100% - 436px)); margin: 0 auto 18px; display: grid; grid-template-columns: repeat(5, 1fr); padding: 13px 16px; box-shadow: none; }
+.jlpt-summary div { display: grid; gap: 1px; text-align: center; border-right: 1px solid var(--line); }
+.jlpt-summary div:last-child { border-right: 0; }
+.jlpt-summary strong { color: var(--accent); font-size: 20px; }
+.jlpt-summary span { color: var(--muted); font-size: 10px; }
+body[data-page="vocab"] .word-row { grid-template-columns: minmax(145px, 1fr) minmax(110px, .75fr) minmax(220px, 1.45fr) minmax(180px, 1fr); }
+.word-main { display: flex; align-items: center; gap: 7px; }
+.audio-button { flex: 0 0 auto; width: 27px; height: 27px; display: inline-grid; place-items: center; padding: 0; border: 1px solid var(--line); border-radius: 7px; color: var(--accent); background: var(--surface); font-size: 13px; line-height: 1; cursor: pointer; }
+.audio-button:hover { border-color: var(--accent); background: var(--accent-2); }
+.audio-button.labeled { width: auto; padding: 0 8px; font-size: 11px; }
+.audio-button.is-loading { opacity: .55; cursor: wait; }
+.detail-label-row { display: flex; align-items: center; justify-content: space-between; gap: 10px; margin-bottom: 4px; }
+.detail-label-row .detail-label { margin-bottom: 0; }
+.word-memo { min-width: 0; overflow: hidden; color: var(--accent); text-overflow: ellipsis; white-space: nowrap; }
+.word-memo.muted { color: var(--muted); }
+.calendar-card, .week-card { margin-top: 16px; padding: 12px; border: 1px solid var(--line); border-radius: 11px; background: var(--surface-2); }
+.calendar-head { display: grid; grid-template-columns: 36px 1fr 36px; align-items: center; margin-bottom: 9px; text-align: center; }
+.calendar-head .icon-button { min-height: 32px; height: 32px; }
+.calendar-weekdays, .calendar-grid { display: grid; grid-template-columns: repeat(7, 1fr); gap: 4px; }
+.calendar-weekdays { margin-bottom: 4px; color: var(--muted); font-size: 10px; text-align: center; }
+.calendar-day { position: relative; min-width: 0; aspect-ratio: 1; display: grid; place-content: center; gap: 0; padding: 1px; border: 1px solid transparent; border-radius: 8px; background: transparent; font-size: 12px; }
+.calendar-day:hover { background: var(--surface); border-color: var(--line); }
+.calendar-day.has-study { color: var(--accent); background: color-mix(in srgb, var(--accent-2) 65%, var(--surface)); font-weight: 750; }
+.calendar-day.today { box-shadow: inset 0 0 0 1px var(--success); }
+.calendar-day.selected { color: #fff; background: var(--accent); border-color: var(--accent); }
+.calendar-day small { font-size: 8px; line-height: 1; opacity: .8; }
+.calendar-empty { aspect-ratio: 1; }
+.calendar-section-title, .log-list-head { display: flex; align-items: center; justify-content: space-between; gap: 10px; }
+.week-chart { height: 78px; display: grid; grid-template-columns: repeat(7, 1fr); align-items: end; gap: 5px; margin-top: 7px; }
+.week-bar { height: 69px; display: flex; flex-direction: column; align-items: center; justify-content: flex-end; gap: 2px; padding: 0; border: 0; border-radius: 6px; background: transparent; }
+.week-bar:hover, .week-bar.selected { background: var(--surface); }
+.week-bar i { width: min(18px, 72%); min-height: 2px; border-radius: 4px 4px 2px 2px; background: var(--accent); }
+.week-bar small { color: var(--muted); font-size: 9px; line-height: 1.15; }
+.week-value { min-height: 13px; color: var(--accent); font-size: 9px; }
+.log-list-head { margin: 17px 0 9px; }
+.log-word { grid-template-columns: max-content minmax(0, 1fr); column-gap: 10px; }
+.log-word > span:not(.log-meaning):not(.log-memo) { justify-self: start; }
+.log-memo { grid-column: 1 / -1; overflow: hidden; color: var(--accent); font-size: 11px; text-overflow: ellipsis; white-space: nowrap; }
+@media (max-width: 1080px) { .jlpt-summary { width: calc(100% - 198px); margin-right: 0; } }
+@media (max-width: 820px) { body[data-page="vocab"] .word-row { grid-template-columns: minmax(125px, .9fr) minmax(100px, .7fr) minmax(170px, 1.2fr) minmax(130px, .9fr); } }
+@media (max-width: 680px) {
+  .jlpt-summary { width: 100%; grid-template-columns: repeat(5, minmax(58px, 1fr)); overflow-x: auto; }
+  body[data-page="vocab"] .word-row { grid-template-columns: minmax(0, 1fr) auto; }
+  .word-memo { max-width: 150px; }
+  .calendar-card, .week-card { padding: 9px; }
+}

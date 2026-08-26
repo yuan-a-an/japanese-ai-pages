@@ -1,0 +1,29 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Japanese-AI 个人只读单词本"><title>単語帳 · Japanese-AI</title>
+  <script>document.documentElement.dataset.theme=localStorage.getItem('theme')||'light'</script>
+  <link rel="stylesheet" href="./assets/style.css"><link rel="stylesheet" href="./assets/layout-overrides.css"><link rel="stylesheet" href="./assets/pages.css">
+</head>
+<body data-page="vocab" data-pages-base=".">
+  <header class="topbar"><a class="brand" href="./"><span class="brand-mark">日</span><span>Japanese-AI</span></a><nav class="pages-nav" aria-label="主导航"><a class="active" href="./" aria-current="page">単語帳</a><a href="./quiz/">単語テスト</a></nav><button id="theme-toggle" class="icon-button" type="button" aria-label="切换深色模式">◐</button></header>
+  <main class="page-shell">
+    <header class="page-heading pages-heading"><div><div class="eyebrow">MY VOCABULARY · READ ONLY</div><h1>日語単語帳</h1><div class="muted" id="word-summary">正在读取词库…</div></div><div class="toolbar"><button id="show-log" class="button" type="button">学習記録</button><a class="button primary" href="./quiz/">开始单词测试 →</a></div></header>
+    <section class="pages-filter-panel" aria-label="筛选单词"><label><span class="sr-only">搜索单词</span><input id="search" class="search" type="search" placeholder="搜索日文 / 假名 / 释义 / 词性 / memo…" autocomplete="off"></label><select id="type-filter" aria-label="按词性筛选"><option value="">全部词性</option></select></section>
+    <div class="word-table-head" aria-hidden="true"><span>単語</span><span>読み</span><span>意味</span><span>Memo</span></div><div id="word-list" class="list" aria-live="polite"></div><div id="pagination" class="pagination"></div>
+  </main>
+  <div id="detail-overlay" class="overlay" hidden><section class="modal pages-detail-modal" role="dialog" aria-modal="true" aria-labelledby="detail-title">
+    <div class="modal-head"><div><h2 id="detail-title"></h2><div id="detail-kana" class="muted"></div></div><button class="icon-button close" aria-label="关闭">✕</button></div>
+    <div class="detail-actions"><button id="speak-word" class="button audio-button" type="button">🔊 朗读单词</button><button id="speak-example" class="button audio-button" type="button">🔊 朗读例句</button></div>
+    <div class="detail-grid"><div class="detail-block"><div class="detail-label">释义</div><div id="detail-meaning"></div></div><div class="detail-block"><div class="detail-label">词性</div><div id="detail-type"></div></div><div class="detail-block full"><div class="detail-label">Memo</div><div id="detail-memo" class="memo-readonly"></div></div><div class="detail-block full"><div class="detail-label">最近学习</div><div id="detail-history"></div></div><div id="pair-block" class="detail-block full" hidden><div class="detail-label" id="pair-label">对应词</div><div id="detail-pair"></div></div><div id="example-block" class="detail-block full" hidden><div class="detail-label">例句</div><div id="detail-example" class="example-jp"></div><div id="detail-translation" class="muted example-translation"></div><div id="detail-grammar" class="chips"></div></div></div>
+    <p class="readonly-note">这是只读快照，不提供导入、导出、打卡或编辑功能。</p>
+  </section></div>
+  <div id="log-overlay" class="drawer-overlay" hidden><aside class="drawer" role="dialog" aria-modal="true" aria-labelledby="log-title">
+    <div class="modal-head"><div><h2 id="log-title">学習記録</h2><div id="log-total" class="muted"></div></div><button class="icon-button close" aria-label="关闭">✕</button></div>
+    <section class="calendar-card" aria-label="学习日历"><div class="calendar-head"><button id="calendar-prev" class="icon-button" aria-label="上个月">‹</button><strong id="calendar-title"></strong><button id="calendar-next" class="icon-button" aria-label="下个月">›</button></div><div class="calendar-weekdays" aria-hidden="true"><span>一</span><span>二</span><span>三</span><span>四</span><span>五</span><span>六</span><span>日</span></div><div id="log-calendar" class="calendar-grid"></div></section>
+    <div class="log-list-head"><strong id="log-selected-date">—</strong><span id="log-selected-count" class="muted"></span></div><input id="log-search" type="search" placeholder="搜索这一天的单词…"><div id="log-words" class="pages-log-words"></div>
+  </aside></div>
+  <div id="toast" class="toast" role="status" aria-live="polite" hidden></div><script src="./assets/pages-common.js"></script><script src="./assets/vocab-personal.js"></script>
+</body>
+</html>
