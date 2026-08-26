@@ -1,4 +1,4 @@
-const { $, $$, escapeHtml: e, loadWords, playAudio, toast } = window.JAPages;
+const e = window.JAPages.escapeHtml;
 const state = {words: [], log: {}, date: '', month: null, mode: localStorage.getItem('quiz_mode') || 'read'};
 const pad = value => String(value).padStart(2, '0');
 const parseDay = day => new Date(`${day}T12:00:00`);

@@ -1,4 +1,4 @@
-const { $, $$, escapeHtml: e, loadWords, playAudio, renderSegments, toast } = window.JAPages;
+const e = window.JAPages.escapeHtml;
 const state = {words: [], log: {}, filtered: [], page: 1, pageSize: 24, current: null, logDate: '', logMonth: null};
 const pad = value => String(value).padStart(2, '0');
 const parseDay = value => new Date(`${value}T12:00:00`);
